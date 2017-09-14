@@ -5,4 +5,4 @@ Just a test of reveal.js framework (http://lab.hakim.se/reveal-js/).
 
 MIT licensed
 
-Copyright (C) 2017 Hakim El Hattab, http://hakim.se
+Copyright (C) 2017 Marcos Lourenço
