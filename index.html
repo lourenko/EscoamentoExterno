@@ -1,49 +1,301 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html lang="en">
 
-		<title>reveal.js</title>
+        <head>
+                <meta charset="utf-8">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+                <title>Esc. Externos</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+                <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+                <meta name="author" content="Hakim El Hattab">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+                <meta name="apple-mobile-web-app-capable" content="yes">
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+                <link rel="stylesheet" href="css/reveal.css">
+                <link rel="stylesheet" href="css/reveal-override.css">
+                <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+                <!-- Theme used for syntax highlighting of code -->
+                <link rel="stylesheet" href="lib/css/solarized-light.css">
+
+                <!-- Printing and PDF exports -->
+                <script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+                </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+                <!--[if lt IE 9]>
+                        <script src="lib/js/html5shiv.js"></script>
+                <![endif]-->
+        </head>
+<style>
+    /*.reveal .slides section .fragment.fade-down {
+        opacity: 1;
+        visibility: visible;
+    }
+    .reveal .slides section .fragment.fade-down.visible,
+    .reveal .slides section .fragment.visible:not(.current-fragment) {
+        color: grey;
+    }
+    .reveal .slides section .fragment.fade-down,
+    .reveal .slides section .fragment.current-fragment {
+        color: #1b91ff;
+    }*/
+section#my-file-format img {
+        /*position: absolute;
+        left: 0;
+        right: 0;
+        min-height: 500px;*/
+}
+/*.reveal section img {background:none; border:none; box-shadow:none;}*/
+#esquerda {position:absolute; margin:0 auto; left: 0px;}
+#noborder {background:none; border:none; box-shadow:none;}
+#fileira {background:none; border:none; box-shadow:none; position:absolute; top:0; left:0;}
+</style>
+        <body>
+                <div class="reveal">
+                        <div class="slides">
+                                $\newcommand{\Vol}{\rotatebox[origin=c]{180}{\ensuremath{A}}}$
+                                $\newcommand{\vv}[1]{\overset{→}{#1}}$
+                                $\require{cancel}$
+                                <section>
+                                        <h1>Camada Limite</h1>
+                                        <h3>Mecânica dos Fluidos 2</h3>
+                                        <p>
+                                        <small>Prof. <a href="http://paginapessoal.utfpr.edu.br/mlourenco/fenomenos-de-transporte">Marcos Lourenço</a></small>
+                                        </p>
+                                </section>
+                                <section>
+                                        <h3>Hipóteses para a camada limite</h3><br>
+                                        <ul>
+                                                <li> $u\to U$ em $y=\delta$;</li><br>
+                                                <li class="fragment "> $\partial u/\partial y\to 0$ em $y=\delta$;</li><br>
+                                                <li class="fragment "> $v \ll U$ para $y\leq \delta$.</li>
+                                        </ul>
+                                </section>
+                                <section>
+                                        <h4>Exemplo: <em>Escoamento em um Canal</em></h4>
+                                        <figure>
+                                                <img alt="" src="./images/figex09001.svg" height="450" style="border: none;box-shadow: none;">
+                                                <figcaption class="fragment"><font color="#2c72c7">Determinar $\Delta p$ como uma fração da pressão dinâmica na corrente livre na entrada.</font></figcaption>
+                                        </figure>
+                                </section>
+                                <section>
+                                        <h3>Solução de Blasius</h3>
+                                        <br>
+                                        <p class="fragment
+                                        grow">\(\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0\)</p><br>
+                                        <p class="fragment grow">\(u\frac{\partial u}{\partial x}+v\frac{\partial u}{\partial y}=\nu\frac{\partial^{2} u}{\partial y^{2}}\)<p><br>
+                                        <p class="fragment">em $y=0$, $u=0$ e $v=0$</p>
+                                        <p class="fragment">em $y=\infty$, $u=U$ e $\frac{\partial u}{\partial y}=0$</p><br>
+                                </section>
+                                <section>
+                                        <h3>Solução de Blasius</h3><br>
+                                        <img src="images/blasius.jpg" width="30%" style="float: right">
+                                        <p class="fragment grow">$\eta=y\sqrt{\frac{U}{\nu x}}$</p><br>
+                                        <p class="fragment grow">$f(\eta)=\frac{\psi}{\sqrt{\nu x U}}$<p><br>
+                                        <p class="fragment">$u = \frac{\partial \psi}{\partial y}\quad $ e $\quad v = -\frac{\partial \psi}{\partial x}$</p>
+                                </section>
+                                <section>
+                                        <h3>Solução de Blasius</h3><br>
+                                        <p id="esquerda">Isolando as componentes de velocidade:</p><br><br><br>
+                                        <p class="fragment roll-in">\(u=U\frac{df}{d\eta}\)</p><br>
+                                        <p class="fragment roll-in">\(v=\frac{1}{2}\sqrt{\frac{\nu U}{x}}\left[\eta\frac{df}{d\eta}-f\right]\)<p><br>
+                                </section>
+                                <section>
+                                        <h3>Solução de Blasius</h3><br>
+                                        <p id="esquerda">Substituindo na Eq. da Continuidade:</p><br><br>
+                                        <p class="fragment">$2f'''+f f''=0$</p><br>
+                                        <p class="fragment">em $\eta=0$, $\quad f=\frac{d f}{d \eta}=0$</p>
+                                        <p class="fragment">em $\eta\to\infty$, $\quad u=U\quad$ e $\quad \frac{d f}{d \eta}=1$</p><br>
+                                </section>
+                                <section>
+                                        <h3>Solução de Blasius</h3>
+                                        <figure>
+                                                <img id="noborder" width="1920px" src="images/blasiusresults.png"/>
+                                        </figure>
+                                </section>
+                                <section>
+                                        <h3>Solução de Blasius</h3><br>
+                                        <p id="esquerda">Da solução, para $\,\eta=5$, $\,u/U=0,992\,$ e tem-se:</p><br><br>
+                                        <p class="fragment">$\delta\approx\frac{5,0}{\sqrt{U/\nu x}}\quad\to\quad\frac{\delta}{x}=\frac{5,0}{\sqrt{Re_x}}$</p><br>
+                                        <p class="fragment">$C_f=\frac{\tau_w}{\frac{1}{2}\rho U^2}=\frac{0,664}{\sqrt{Re_x}}$</p>
+                                </section>
+                                <section>
+                                        <h3>Solução Integral da Camada Limite</h3><br>
+                                        <figure>
+                                                <img id="noborder" alt="" src="./images/fig09004.svg" height="500">
+                                        </figure>
+                                </section>
+                                <section>
+                                        <h3>Solução Integral da Camada Limite</h3><br>
+                                        <p>Aplicando as equações de <em>conservação da massa</em>:</p>
+                                        <p>$\frac{\partial}{\partial t}\int_{VC}\rho d\Omega+\int_{SC}\rho \vv{V}\cdot d\vv{A}=0$</p><br>
+                                        <p>e da <em>quantidade de movimento</em>:</p>
+                                        <span>$F_{Sx}+F_{Bx}=\frac{\partial}{\partial t}\int_{VC}u\rho d\Omega+\int_{SC}u\rho \vv{V}\cdot d\vv{A}$</span>
+                                </section>
+                                <section data-transition="zoom" data-transition-speed="fast">
+                                        <h3>Solução Integral da Camada Limite</h3><br>
+                                        <p>Aplicando as equações de <em>conservação da massa</em>:</p>
+                                        <p>$\cancelto{0}{\frac{\partial}{\partial t}}\int_{VC}\rho d\Omega+\int_{SC}\rho \vv{V}\cdot d\vv{A}=0$</p><br>
+                                        <p>e da <em>quantidade de movimento</em>:</p>
+                                        <span>$F_{Sx}+\cancelto{0}{F_{Bx}}=\cancelto{0}{\frac{\partial}{\partial t}}\int_{VC}u\rho d\Omega+\int_{SC}u\rho \vv{V}\cdot d\vv{A}$</span>
+                                </section>
+                                <section>
+                                        <h3>Solução Integral da Camada Limite</h3><br>
+                                        <p id="esquerda">Deve-se chegar a uma expressão da forma:</p><br>
+                                        <p>$\tau_{w}=\frac{\partial}{\partial x}U^{2}\int_{0}^{\delta}\rho\frac{u}{U}\left(1-\frac{u}{U}\right)dy+U\frac{dU}{dx}\int_{0}^{\delta}\rho\left(1-\frac{u}{U}\right)dy$</p><br>
+                                        <div class="fragment fade-up"><p id="esquerda">Substituindo as expressões para as espessuras $\delta^*$ e $\theta$:</p><br>
+                                                <p>$\frac{\tau_{w}}{\rho}=\frac{\partial}{\partial x}\left(U^{2}\theta\right)+\delta^{*}U\frac{dU}{dx}$</p>
+                                        </div>
+                                </section>
+                                <section>
+                                        <h3>Solução Integral da Camada Limite</h3><br>
+                                        <ol>
+                                                <li class="fragment">Obter uma uma primeira aproximação para $U(x)$;</li>
+                                                <li class="fragment">Considerar um perfil razoável de velocidade na camada limite;</li>
+                                                <li class="fragment">Deduzir uma expressão para $\tau_w$ a partir do item 2.</li>
+                                        </ol>
+                                </section>
+                                <section>
+                                        <h3>Exemplo: Gradiente de Pressão Zero</h3><br>
+                                        <p id="esquerda">Nesse caso, como $U(x)=U$, a equação fica:</p><br>
+                                        <p>$\tau_{w}=\rho U^{2}\frac{\partial\theta}{\partial x}=\rho U^{2}\frac{\partial}{\partial x}\int_{0}^{\delta}\frac{u}{U}\left(1-\frac{u}{U}\right)dy$</p><br>
+                                        <div class="fragment fade-up"><p id="esquerda">Se aplicar um perfil de velocidade laminar:</p><br>
+                                                <p>$u=ay^2+by+c$</p>
+                                        </div>
+                                </section>
+                                <section>
+                                        <h3>Exemplo: Gradiente de Pressão Zero</h3><br>
+                                        <p id="esquerda">Chegamos aos seguintes resultados:</p><br>
+                                        <p>$\frac{\delta}{x}=\sqrt{\frac{30\nu}{Ux}}=\frac{5,48}{\sqrt{Re_{x}}}$</p><br>
+                                        <div class="fragment fade-up"><p id="esquerda">e,</p><br>
+                                                <p>$C_{f}=\frac{0,730}{\sqrt{Re_{x}}}$</p>
+                                        </div>
+                                </section>
+                                <section data-transition="slide">
+                                        <h3>Exemplo: Gradiente de Pressão Zero - Turbulento</h3><br>
+                                        <p id="esquerda">A equação geral é a mesma anterior mas:</p><br>
+                                        <p>$\frac{u}{U}=\left(\frac{y}{\delta}\right)^{1/7}=\eta^{1/7}$</p><br>
+                                        <div class="fragment fade-up"><p id="esquerda">e a tensão usada é aquela do escoamento num tubo:</p><br>
+                                                <p>$\tau=0,0332\rho\bar{V}\left[\frac{\nu}{R\bar{V}}\right]^{1/4}\quad \text{e} \quad\frac{\bar{V}}{U}=0,817$</p>
+                                        </div>
+                                </section>
+                                <section data-transition="convex">
+                                        <h3>Exemplo: Gradiente de Pressão Zero</h3><br>
+                                        <p id="esquerda">E, para um escoamento turbulento:</p><br>
+                                        <p>$\frac{\delta}{x}=0,382\left(\frac{\nu}{Ux}\right)^{1/5}=\frac{0,382}{Re_{x}^{1/5}}$</p><br>
+                                        <div class="fragment fade-up"><p id="esquerda">e,</p><br>
+                                                <p>$C_{f}=\frac{0,0594}{Re_{x}^{1/5}}$</p>
+                                        </div>
+                                </section>
+                                <section>
+                                        <h3>Camada Limite com Gradiente de Pressão</h3><br>
+                                        <p id="esquerda">Seria possível em algum ponto que \(\partial u/\partial y)_{y=0}=0\)?</p><br><br>
+                                        <div class="fragment" style="float:left">
+                                                <em>Escoamento laminar:<br><br> \(\frac{\tau_{w}(x)}{\rho U^{2}}=\frac{constante}{Re_{x}^{1/2}}\)</em>
+                                        </div>
+                                        <div class="fragment" style="float:right">
+                                                <em>Escoamento turbulento:<br><br> \(\frac{\tau_{w}(x)}{\rho U^{2}}=\frac{constante}{Re_{x}^{1/5}}\)<br></em>
+                                        </div>
+                                        <div class="fragment" style="clear:both;">
+                                                <p>Ou seja, para qualquer comprimento, nunca haverá descolamento se \(\partial p/\partial x=0\)</p><br><br>
+                                        </div>
+                                </section>
+                                <section>
+                                        <h3>Camada Limite com Gradiente de Pressão</h3><br>
+                                        <ul style="list-style-type:none">
+                                                <li class="fragment"><em><font style="text-shadow:2px 2px #BBBBBB">Gradiente de pressão favorável:</font></em>
+                                                        <p>A pressão diminui no sentido do escoamento \(\partial p/\partial x < 0\).</p>
+                                                </li>
+                                                <li class="fragment"><em><font style="text-shadow:2px 2px #BBBBBB">Gradiente de pressão adverso:</font></em>
+                                                        <p>A pressão aumenta no sentido do escoamento $\partial p/\partial x > 0$.</p>
+                                                </li>
+                                                <ul>
+                                </section>
+                                <section>
+                                        <h3>Camada Limite com Gradiente de Pressão</h3><br>
+                                        <figure>
+                                                <img id="noborder" alt="" src="./images/fig09006.svg" height="400">
+                                        </figure>
+                                </section>
+                                <section>
+                                        <h3>Camada Limite com Gradiente de Pressão</h3>
+                                        <figure>
+                                                <img id="noborder" alt="" src="./images/camadaturbulenta.png" height="400">
+                                                <figcaption><font>Fotos por R. Falco, em Head & Bandyopadhyay (1981).</font></figcaption>
+                                        </figure>
+                                </section>
+                                <section>
+                                        <h3>Camada Limite com Gradiente de Pressão</h3><br>
+                                        <figure>
+                                                <img id="noborder" alt="" src="./images/fig09007.svg" height="400">
+                                        </figure>
+                                </section>
+                                <section>
+                                        <h3>Camada Limite com Gradiente de Pressão</h3><br>
+                                        <div><p id="esquerda">De uma forma geral:</p><br>
+                                                <p>$\frac{\tau_{w}}{\rho}=U^{2}\frac{d \theta}{d x}+\left(\delta^{*}+2\theta\right)U\frac{dU}{dx}$</p>
+                                                <div class="fragment fade-left"><p id="esquerda">ou ainda:</p><br>
+                                                        <p>$\frac{\tau_{w}}{\rho U^2}=\frac{C_{f}}{2}=\frac{d \theta}{d x}+\left(H+2\right)\frac{\theta}{U}\frac{dU}{dx}$</p>
+                                                        <div class="fragment fade-left"><p id="esquerda">na qual $H$ é o <em>fator de forma</em>.</p><br>
+                                </section>
+                                <section data-transition="zoom">
+                                        <h4 id="esquerda">Resumo</h4>
+                                        <figure>
+                                                <img id="noborder" alt="" src="./images/complexos.png" height="400">
+                                                <figcaption><font>"Understanding Aerodynamics" Doug McLean (2016).</font></figcaption>
+                                        </figure>
+                                </section>
+                                <section>
+                                        <div class="container">
+                                                <h1 class="fragment fade-in current-fragment" data-fragment-index="0">Dúvidas?</h1>
+                                                <hr class="fragment visible current-fragment" data-fragment-index="0">
+                                                <p>Apresentação na  <a href="http://paginapessoal.utfpr.edu.br/mlourenco/fenomenos-de-transporte">@paginapessoal</a>
+                                                <br>Livro texto: <a href="http://www.saraiva.com.br/introducao-a-mecanica-dos-fluidos-8-ed-2014-6975691.html">Fox - Introdução à mecânica dos fluidos</a>
+                                                </p>
+                                                <hr class="fragment visible current-fragment" data-fragment-index="0">
+                                                <p class="fragment visible current-fragment" data-fragment-index="0">
+                                                </p>
+                                        </div>
+                                </section>
+                                                        </div>
+                                                </div>
+
+                                                <script src="lib/js/head.min.js"></script>
+                                                <script src="js/reveal.js"></script>
+
+                                                <script>
+
+// More info https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/math/math.js', async: true }
+        ]
+});
+
+                                                </script>
+        </body>
 </html>
