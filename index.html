@@ -135,14 +135,14 @@ section#my-file-format img {
                                                 <img id="noborder" alt="" src="./images/fig09004.svg" height="500">
                                         </figure>
                                 </section>
-                                <section>
+                                <section data-transition="fade-in none-out">
                                         <h3>Solução Integral da Camada Limite</h3><br>
                                         <p>Aplicando as equações de <em>conservação da massa</em>:</p>
                                         <p>$\frac{\partial}{\partial t}\int_{VC}\rho d\Omega+\int_{SC}\rho \vv{V}\cdot d\vv{A}=0$</p><br>
-                                        <p>e da <em>quantidade de movimento</em>:</p>
-                                        <span>$F_{Sx}+F_{Bx}=\frac{\partial}{\partial t}\int_{VC}u\rho d\Omega+\int_{SC}u\rho \vv{V}\cdot d\vv{A}$</span>
+                                        <p class="fragment">e da <em>quantidade de movimento</em>:
+                                        <span>$F_{Sx}+F_{Bx}=\frac{\partial}{\partial t}\int_{VC}u\rho d\Omega+\int_{SC}u\rho \vv{V}\cdot d\vv{A}$</span></p>
                                 </section>
-                                <section data-transition="zoom" data-transition-speed="fast">
+                                <section data-transition="none-in fade-out">
                                         <h3>Solução Integral da Camada Limite</h3><br>
                                         <p>Aplicando as equações de <em>conservação da massa</em>:</p>
                                         <p>$\cancelto{0}{\frac{\partial}{\partial t}}\int_{VC}\rho d\Omega+\int_{SC}\rho \vv{V}\cdot d\vv{A}=0$</p><br>
@@ -150,15 +150,110 @@ section#my-file-format img {
                                         <span>$F_{Sx}+\cancelto{0}{F_{Bx}}=\cancelto{0}{\frac{\partial}{\partial t}}\int_{VC}u\rho d\Omega+\int_{SC}u\rho \vv{V}\cdot d\vv{A}$</span>
                                 </section>
                                 <section>
+                                        <h3>Solução Integral (Continuidade)</h3><br>
+                                        <p id="esquerda">Da equação de conservação da massa:</p><br>
+                                        <p>$\int_{SC}\rho \vv{V}\cdot d\vv{A}=0$</p><br>
+                                        <div class="fragment fade">
+                                        <p id="esquerda">ou ainda,</p><br>
+                                        <p>$\dot{m}_{bc}=-\dot{m}_{ab}-\dot{m}_{cd}$</p>
+                                        </div>
+                                </section>
+                                <section>
+                                        <h3>Solução Integral (Continuidade)</h3><br>
+                                        <p id="esquerda">Assim, tem-se para os fluxos, na face `ab`:</p><br>
+                                        <p>$\dot{m}_{ab}=-\left(\int_{0}^{\delta}\rho u\,dy\right)w$</p>
+                                        <div class="fragment fade">
+                                        <p id="esquerda">e em `cd`:</p><br>
+                                        <p>$\dot{m}_{cd}=\left[\int_{0}^{\delta}\rho u\,dy+
+                                           \frac{\partial}{\partial x}\left(\int_{0}^{\delta}\rho u\,dy\right)dx\right]w$</p>
+                                        </div>
+                                        <div class="fragment fade">
+                                        <p id="esquerda">e ainda, para a conservação da massa temos, em `bc`:</p><br>
+                                        <p>$\dot{m}_{cd}=-\left[\frac{\partial}{\partial x}\left(\int_{0}^{\delta}\rho u\,dy\right)dx\right]w$</p>
+                                        </div>
+                                </section>
+                                <section>
+                                        <h3>Solução Integral (Quantidade de Movimento)</h3><br>
+                                        <p id="esquerda">Da Eq. de Quantidade de Movimento em `x`:</p><br>
+                                        <p>$F_{S,x}=mf_{ab}+mf_{bc}+mf_{cd}$</p>
+                                        <div class="fragment fade">
+                                        <p id="esquerda">que foi simplificada de,</p><br>
+                                        <p>$F_{S,x}=\int_{SC}u\rho \vv{V}\cdot d\vv{A}$</p>
+                                        </div>
+                                </section>
+                                <section>
+                                        <h3>Solução Integral (Quantidade de Movimento)</h3><br>
+                                        <p id="esquerda">E os fluxos de Q.M. nas faces `ab`, `cd` e `bc` ficam,</p><br>
+                                        <p>$\dot{m}_{ab}=-\left(\int_{0}^{\delta}u\rho u\,dy\right)w$,</p>
+                                        <div class="fragment fade">
+                                        <p>$\dot{m}_{cd}=\left[\int_{0}^{\delta}u\rho u\,dy+
+                                           \frac{\partial}{\partial x}\left(\int_{0}^{\delta}u\rho u\,dy\right)dx\right]w$,</p>
+                                        <p id="esquerda">e,</p><br>
+                                        </div>
+                                        <div class="fragment fade">
+                                        <p>$\dot{m}_{cd}=-U\left[\frac{\partial}{\partial x}\left(\int_{0}^{\delta}\rho u\,dy\right)dx\right]w$</p>
+                                        <p id="esquerda">respectivamente.</p><br>
+                                        </div>
+                                </section>
+                                <section>
+                                        <h3>Solução Integral (Quantidade de Movimento)</h3><br>
+                                        <p id="esquerda">Então o fluxo líquido de Q.M. em `x` será:</p><br><br>
+
+                                        <p>$$\begin{align} 
+                                 \int_{SC}u\rho \vv{V}\cdot d\vv{A} &= \left[\frac{\partial}{\partial x}\left(\int_{0}^{\delta}u\rho u\,dy\right)dx +\right.\nonumber \\
+                                        & \left. -U\frac{\partial}{\partial x}\left(\int_{0}^{\delta} \rho u\,dy\right)dx\right]w \nonumber
+                                        \end{align}$$</p>
+                                </section>
+                                <section>
+                                        <h3>Solução Integral (Quantidade de Movimento)</h3><br>
+                                        <p id="esquerda">Do somatório de forças de superfície em `x` temos:</p><br><br>
+                                        <p>$$\begin{align}
+                                        F_{S,x}=\left[-\frac{dp}{dx}\delta dx-\frac{1}{2}\frac{dp}{dx}\cancelto{0}{d\delta\,dx}
+                                        \!\!\!\!-\tau_w\,dx-\frac{1}{2}\cancelto{0}{d\tau_w}\!\!dx\right]\!\!w \nonumber
+                                        \end{align}$$</p>
+                                        <div class="fragment fade">
+                                        <p id="esquerda">na qual o segundo e quarto termos foram desprezados</p><br>
+                                        <p id="esquerda">pois:</p><br>
+                                        <p>$$\begin{align}
+                                        d\delta\,dx \ll \delta\,dx\quad \mbox{e} \quad d\tau_w \ll \tau_w
+                                        \end{align}$$</p>
+                                        </div>
+                                </section>
+                                <section>
+                                        <h3>Solução Integral (Quantidade de Movimento)</h3><br>
+                                        <p id="esquerda">Substituindo a força e o fluxo líquido de Q.M. em `x` vem:</p><br><br>
+
+                                        <p>$$\begin{align} 
+                            -\delta\frac{dp}{dx}-\tau_w=\frac{\partial}{\partial x}\int_{0}^{\delta}u\rho u\,dy-U\frac{\partial}{\partial x}\int_{0}^{\delta} \rho u\,dy
+                                        \end{align}$$</p>
+                                </section>
+                                <section>
+                                        <h3>Solução Integral (Quantidade de Movimento)</h3><br>
+                                        <p id="esquerda">Usando que:</p><br><br>
+                                        <p>$dp/dx=-\rho U dU/dx$</p>
+                                        <p id="esquerda">e que:</p><br>
+                                        <p>$$\begin{align} 
+         U\frac{\partial}{\partial x}\int_{0}^{\delta} \rho u\,dy=\frac{\partial}{\partial x}\int_{0}^{\delta}U\rho u\,dy-\frac{dU}{dx}\int_{0}^{\delta} \rho u\,dy
+                                        \end{align}$$</p>
+                                </section>
+                                <section>
+                                        <h3>Solução Integral (Quantidade de Movimento)</h3><br>
+                                        <p id="esquerda">A <em>equação integral da quantidade de movimento</em> fica:</p><br><br>
+                                        <p>$$\begin{align} 
+                                        \frac{\tau_w}{\rho}=\frac{d}{dx}\left(U^2\theta\right)+\delta^*U\frac{dU}{dx}
+                                        \end{align}$$</p>
+                                </section>
+                                <!--section>
                                         <h3>Solução Integral da Camada Limite</h3><br>
                                         <p id="esquerda">Deve-se chegar a uma expressão da forma:</p><br>
                                         <p>$\tau_{w}=\frac{\partial}{\partial x}U^{2}\int_{0}^{\delta}\rho\frac{u}{U}\left(1-\frac{u}{U}\right)dy+U\frac{dU}{dx}\int_{0}^{\delta}\rho\left(1-\frac{u}{U}\right)dy$</p><br>
                                         <div class="fragment fade-up"><p id="esquerda">Substituindo as expressões para as espessuras $\delta^*$ e $\theta$:</p><br>
                                                 <p>$\frac{\tau_{w}}{\rho}=\frac{\partial}{\partial x}\left(U^{2}\theta\right)+\delta^{*}U\frac{dU}{dx}$</p>
                                         </div>
-                                </section>
+                                </section-->
                                 <section>
                                         <h3>Solução Integral da Camada Limite</h3><br>
+                                        <p id="esquerda">Passos da solução integral da camada limite:</p><br><br>
                                         <ol>
                                                 <li class="fragment">Obter uma uma primeira aproximação para $U(x)$;</li>
                                                 <li class="fragment">Considerar um perfil razoável de velocidade na camada limite;</li>
@@ -175,10 +270,39 @@ section#my-file-format img {
                                 </section>
                                 <section>
                                         <h3>Exemplo: Gradiente de Pressão Zero</h3><br>
+                                        <p id="esquerda">Para as seguintes condições de contorno:</p><br><br>
+                                        <p>em $\quad y=0,\qquad u=0$</p><br>
+                                        <p>em $\quad y=\delta,\qquad u=U$</p><br>
+                                        <p>em $\quad y=\delta,\qquad \frac{\partial u}{\partial y}=0$</p><br>
+                                </section>
+                                <section>
+                                        <h3>Exemplo: Gradiente de Pressão Zero</h3><br>
+                                        <p id="esquerda">Avaliando as constantes `a`, `b` e `c` temos:</p><br>
+                                        <p>$$\begin{align} 
+                                        \frac{u}{U}=2\left(\frac{y}{\delta}\right)-\left(\frac{y}{\delta}\right)^2=2\eta-\eta^2
+                                        \end{align}$$</p>
+                                        <p id="esquerda">observando ainda que:</p><br>
+                                        <p>$$\begin{align} 
+                                        \tau_w=\mu\left.\frac{\partial u}{\partial y}\right|_{y_0}=\frac{2\mu U}{\delta}=\rho U^{2}\frac{d\delta}{dx}\int_{0}^{1}\frac{u}{U}\left(1-\frac{u}{U}\right)d\eta
+                                        \end{align}$$</p>
+                                </section>
+                                <section>
+                                        <h3>Exemplo: Gradiente de Pressão Zero</h3><br>
+                                        <p id="esquerda">Integrando a última equação temos:</p><br>
+                                        <p>$$\begin{align}
+                                        \delta d\delta=\frac{15\mu}{\rho U}dx
+                                        \end{align}$$</p>
+                                        <p id="esquerda">que pode novamente ser integrada para:</p><br>
+                                        <p>$$\begin{align}
+                                        \frac{\delta^2}{2}=\frac{15\mu}{\rho U}x+c
+                                        \end{align}$$</p>
+                                </section>
+                                <section>
+                                        <h3>Exemplo: Gradiente de Pressão Zero</h3><br>
                                         <p id="esquerda">Chegamos aos seguintes resultados:</p><br>
                                         <p>$\frac{\delta}{x}=\sqrt{\frac{30\nu}{Ux}}=\frac{5,48}{\sqrt{Re_{x}}}$</p><br>
                                         <div class="fragment fade-up"><p id="esquerda">e,</p><br>
-                                                <p>$C_{f}=\frac{0,730}{\sqrt{Re_{x}}}$</p>
+                                          <p>$\qquad\qquad \qquad C_{f}=\frac{0,730}{\sqrt{Re_{x}}}\qquad \left(C_f\equiv\frac{\tau_w}{\frac{1}{2}\rho U^2}\right)$</p>
                                         </div>
                                 </section>
                                 <section data-transition="slide">
